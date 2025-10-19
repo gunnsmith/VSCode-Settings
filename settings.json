@@ -1,0 +1,89 @@
+{
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+
+  // Mimic NVIM-like navigation when combined with the Vim Extension in Visual Studio Code
+  "editor.lineNumbers": "relative",
+
+  // VIM LEADER
+  "vim.leader": "<Space>",
+
+  // NORMAL MODE HOTKEYS
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // NAVIGATION
+    // switch between buffers
+    { "before": ["<S-h>"], "commands": [":bprevious"] },
+    { "before": ["<S-l>"], "commands": [":bnext"] },
+
+    // close active buffer
+    {
+      "before": ["leader", "b", "d"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+
+    // splits
+    { "before": ["leader", "|"], "commands": [":vsplit"] },
+    { "before": ["leader", "-"], "commands": [":split"] },
+
+    // panes
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+
+    // FILE TREE
+    {
+      "before": ["leader", "e"],
+      "commands": ["workbench.explorer.fileView.focus"]
+    },
+
+    // CONVENIENCE
+    // save file
+    { "before": ["leader", "w"], "commands": ["workbench.action.files.save"] },
+    // find/open file
+    { "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
+    // format file
+    { "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
+    // preview definition
+    {
+      "before": ["leader", "g", "h"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    },
+    // goto definition
+    {
+      "before": ["leader", "g", "d"],
+      "commands": ["editor.action.revealDefinition"]
+    },
+    // go back
+    {
+      "before": ["leader", "g", "b"],
+      "commands": ["workbench.action.navigateBack"]
+    }
+  ],
+  // VISUAL MODE HOTKEYS
+  "vim.visualModeKeyBindings": [
+    // indent/unindent selection
+    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+    { "before": [">"], "commands": ["editor.action.indentLines"] },
+    // move selected lines up/down
+    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+    // comment/uncomment selected lines
+    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+  ]
+}
