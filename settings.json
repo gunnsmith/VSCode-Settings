@@ -6,8 +6,6 @@
 
 
   // Mimic NVIM-like navigation when combined with the Vim Extension in Visual Studio Code
-  "editor.lineNumbers": "relative",
-
   // VIM LEADER
   "vim.leader": "<Space>",
 
